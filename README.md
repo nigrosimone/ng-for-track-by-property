@@ -27,13 +27,14 @@ npm i ng-for-track-by-property
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-
+import { CommonModule } from '@angular/common';
 import { NgForTrackByPropertyModule } from 'ng-for-track-by-property';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    CommonModule,
     NgForTrackByPropertyModule,
   ],
   providers: [],
