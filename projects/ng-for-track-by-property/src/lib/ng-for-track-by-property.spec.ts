@@ -2,7 +2,7 @@ import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgForTrackByPropertyModule } from './ng-for-track-by-property.module';
 
-@Component({ template: `<ul *ngFor="let item of list; trackByProperty: 'id'"><li>{{ item.name }}</li></ul>` })
+@Component({ template: `<ul><li *ngFor="let item of list; trackByProperty: 'id'">{{ item.name }}</li></ul>` })
 class TestSimpleComponent {
     list = [
         { id: 0, name: 'foo' },

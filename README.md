@@ -52,8 +52,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <ul *ngFor="let item of list; trackByProperty: 'id'">
-      <li>{{ item.id }} {{ item.name }}</li>
+    <ul>
+      <li *ngFor="let item of list; trackByProperty: 'id'">
+        {{ item.id }} {{ item.name }}
+      </li>
     </ul>
   `,
 })
