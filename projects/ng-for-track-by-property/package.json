@@ -1,0 +1,25 @@
+{
+  "name": "ng-for-track-by-property",
+  "version": "13.0.0",
+  "description": "Structural directive for sharing data as local variable into html component template.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nigrosimone/ng-for-track-by-property.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Simone Nigro <nigro.simone@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nigrosimone/ng-for-track-by-property/issues"
+  },
+  "homepage": "https://github.com/nigrosimone/ng-for-track-by-property",
+  "peerDependencies": {
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
