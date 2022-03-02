@@ -69,7 +69,7 @@ export class AppListComponent {
 
  `ng-for-track-by-property` has strict type checking and only available property are allowed
 
-![alt text](https://github.com/nigrosimone/ng-as/blob/main/help.gif?raw=true)
+![alt text](https://github.com/nigrosimone/ng-for-track-by-property/blob/main/help.gif?raw=true)
 
 See the [stackblitz demo](https://stackblitz.com/edit/demo-ng-for-track-by-property?file=src%2Fapp%2Fapp.component.ts).
 
