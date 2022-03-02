@@ -1,5 +1,21 @@
+<h3>trackByProperty</h3>
 <ul>
   <li *ngFor="let item of list; trackByProperty: 'id'">
-    {{ item.id }} {{ item.name }}
+    id: {{ item.id }}; count: {{ item.count }}
   </li>
 </ul>
+<h3>trackByIndex</h3>
+<ul>
+  <li *ngFor="let item of list; trackByIndex">
+    id: {{ item.id }}; count: {{ item.count }}
+  </li>
+</ul>
+<h3>No trackBy</h3>
+<ul>
+  <li *ngFor="let item of list">
+    id: {{ item.id }}; count: {{ item.count }}
+  </li>
+</ul>
+
+
+<button (click)="randomChange()">Random change</button>

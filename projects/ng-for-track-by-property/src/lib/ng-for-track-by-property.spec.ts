@@ -3,25 +3,59 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgForTrackByPropertyModule } from './ng-for-track-by-property.module';
 
 @Component({ template: `<ul><li *ngFor="let item of list; trackByProperty: 'id'">{{ item.name }}</li></ul>` })
-class TestSimpleComponent {
+class TestPropertyComponent {
     list = [
         { id: 0, name: 'foo' },
         { id: 1, name: 'bar' },
         { id: 2, name: 'baz' },
     ];
 }
-describe('NgForTrackByProperty: simple', () => {
+describe('NgForTrackByProperty: trackByProperty', () => {
 
-    let fixture: ComponentFixture<TestSimpleComponent>;
+    let fixture: ComponentFixture<TestPropertyComponent>;
     let debugElement: DebugElement;
     let element: HTMLElement;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [TestSimpleComponent],
+            declarations: [TestPropertyComponent],
             imports: [NgForTrackByPropertyModule]
         });
-        fixture = TestBed.createComponent(TestSimpleComponent);
+        fixture = TestBed.createComponent(TestPropertyComponent);
+        debugElement = fixture.debugElement;
+        element = debugElement.nativeElement;
+    });
+
+    afterEach(() => {
+        document.body.removeChild(element);
+    });
+
+    it('test', () => {
+        fixture.detectChanges();
+        expect(element.textContent).toBe('foobarbaz');
+    });
+});
+
+@Component({ template: `<ul><li *ngFor="let item of list; trackByIndex">{{ item.name }}</li></ul>` })
+class TestIndexComponent {
+    list = [
+        { id: 0, name: 'foo' },
+        { id: 1, name: 'bar' },
+        { id: 2, name: 'baz' },
+    ];
+}
+describe('NgForTrackByProperty: trackByIndex', () => {
+
+    let fixture: ComponentFixture<TestIndexComponent>;
+    let debugElement: DebugElement;
+    let element: HTMLElement;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [TestIndexComponent],
+            imports: [NgForTrackByPropertyModule]
+        });
+        fixture = TestBed.createComponent(TestIndexComponent);
         debugElement = fixture.debugElement;
         element = debugElement.nativeElement;
     });

@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  list = [
-    { id: 0, name: 'foo' },
-    { id: 1, name: 'bar' },
-    { id: 2, name: 'baz' },
-  ];
+
+  list = Array(3).fill(undefined).map((_, i) => ({id: i, count: 0}));
+
+  randomChange() {
+    this.list[Math.floor(Math.random() * this.list.length)].count++;
+  }
 }

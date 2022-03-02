@@ -4,14 +4,77 @@ Angular global trackBy property directive with strict type checking.
 
 ## Description
 
-Angular global trackBy directive by passing a property name for track the ngFor item with strict type checking.
+If you have written a production-ready Angular application before, you probably know that when displaying a list of data — at least somewhat large lists — you should be using Angular’s `trackBy` feature which looks something like:
+
+```ts
+import { Component } from '@angular/core';
+
+interface Item { 
+  id: number; 
+  name: string;
+}
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <ul>
+      <li *ngFor="let item of list; trackBy: trackById">
+        {{ item.id }} {{ item.name }}
+      </li>
+    </ul>
+  `,
+})
+export class AppListComponent {
+  public list: Array<Item> = [
+    { id: 0, name: 'foo' },
+    { id: 1, name: 'bar' },
+    { id: 2, name: 'baz' },
+  ];
+
+  public trackById(index: number, item: Item) {
+    return item.id;
+  }
+}
+```
+
+Unfortunately, Angular forces us to write a tracking function in each component in which we want to make use of `trackBy`.
+With `ng-for-track-by-property` you could just handle this entirely in the template by passing a property like this:
+
+```ts
+import { Component } from '@angular/core';
+
+interface Item { 
+  id: number; 
+  name: string;
+}
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <ul>
+      <li *ngFor="let item of list; trackByProperty: 'id'">
+        {{ item.id }} {{ item.name }}
+      </li>
+    </ul>
+  `,
+})
+export class AppListComponent {
+  public list: Array<Item> = [
+    { id: 0, name: 'foo' },
+    { id: 1, name: 'bar' },
+    { id: 2, name: 'baz' },
+  ];
+}
+```
+
 
 See the [stackblitz demo](https://stackblitz.com/edit/demo-ng-for-track-by-property?file=src%2Fapp%2Fapp.component.ts).
 
 ## Features
 
-✅ Shared directive for ngFor trackBy<br>
+✅ trackBy property name<br>
 ✅ Type casting<br>
+✅ trackBy index<br>
 
 ## Get Started
 
@@ -44,10 +107,15 @@ import { NgForTrackByPropertyModule } from 'ng-for-track-by-property';
 export class AppModule { }
 ```
 
-*Step 3*: usage, eg.:
+*Step 3*: add `trackByProperty` to your `ngFor`, eg.:
 
 ```ts
 import { Component } from '@angular/core';
+
+interface Item { 
+  id: number; 
+  name: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -60,7 +128,36 @@ import { Component } from '@angular/core';
   `,
 })
 export class AppComponent {
-  list = [
+  public list: Array<Item> = [
+    { id: 0, name: 'foo' },
+    { id: 1, name: 'bar' },
+    { id: 2, name: 'baz' },
+  ];
+}
+```
+
+you can also track by index with `trackByIndex`, eg.:
+
+```ts
+import { Component } from '@angular/core';
+
+interface Item { 
+  id: number; 
+  name: string;
+}
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <ul>
+      <li *ngFor="let item of list; trackByIndex">
+        {{ item.id }} {{ item.name }}
+      </li>
+    </ul>
+  `,
+})
+export class AppComponent {
+  public list: Array<Item> = [
     { id: 0, name: 'foo' },
     { id: 1, name: 'bar' },
     { id: 2, name: 'baz' },
