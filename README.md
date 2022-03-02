@@ -4,7 +4,7 @@ Angular global trackBy property directive with strict type checking.
 
 ## Description
 
-If you have written a production-ready Angular application before, you probably know that when displaying a list of data — at least somewhat large lists — you should be using Angular’s `trackBy` feature which looks something like:
+When displaying a list of data (at least somewhat large lists) you should be using Angular's `trackBy` feature which looks something like:
 
 ```ts
 import { Component } from '@angular/core';
