@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { NgForTrackByIndexDirective, NgForTrackByPropertyDirective } from './ng-for-track-by-property.directive';
+import { NgForTrackByIndexDirective, NgForTrackByPropertyDirective, NgForTrackByIdDirective } from './ng-for-track-by-property.directive';
 
 @NgModule({
-  declarations: [NgForTrackByPropertyDirective, NgForTrackByIndexDirective],
+  declarations: [NgForTrackByPropertyDirective, NgForTrackByIndexDirective, NgForTrackByIdDirective],
   imports: [],
-  exports: [NgForTrackByPropertyDirective, NgForTrackByIndexDirective],
+  exports: [NgForTrackByPropertyDirective, NgForTrackByIndexDirective, NgForTrackByIdDirective],
   providers: []
 })
 export class NgForTrackByPropertyModule { }

@@ -10,6 +10,12 @@
     id: {{ item.id }}; count: {{ item.count }}
   </li>
 </ul>
+<h3>trackById</h3>
+<ul>
+  <li *ngFor="let item of list; trackById">
+    id: {{ item.id }}; count: {{ item.count }}
+  </li>
+</ul>
 <h3>No trackBy</h3>
 <ul>
   <li *ngFor="let item of list">

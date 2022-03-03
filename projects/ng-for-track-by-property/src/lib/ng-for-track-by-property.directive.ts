@@ -27,3 +27,16 @@ export class NgForTrackByIndexDirective<T> {
         ngForOfDir.ngForTrackBy = (index: number): number => index;
     }
 }
+
+@Directive({
+    // tslint:disable-next-line: directive-selector
+    selector: '[ngForTrackById]'
+})
+export class NgForTrackByIdDirective<T extends {id: number | string}> {
+
+    @Input() ngForOf!: NgIterable<T>;
+
+    constructor(@Host() ngForOfDir: NgForOf<T>) {
+        ngForOfDir.ngForTrackBy = (_, item: T) => item.id;
+    }
+}

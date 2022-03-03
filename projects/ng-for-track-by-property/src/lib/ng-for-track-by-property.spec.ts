@@ -69,3 +69,39 @@ describe('NgForTrackByProperty: trackByIndex', () => {
         expect(element.textContent).toBe('foobarbaz');
     });
 });
+
+
+
+@Component({ template: `<ul><li *ngFor="let item of list; trackById">{{ item.name }}</li></ul>` })
+class TestIdComponent {
+    list = [
+        { id: 0, name: 'foo' },
+        { id: 1, name: 'bar' },
+        { id: 2, name: 'baz' },
+    ];
+}
+describe('NgForTrackByProperty: trackById', () => {
+
+    let fixture: ComponentFixture<TestIdComponent>;
+    let debugElement: DebugElement;
+    let element: HTMLElement;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [TestIdComponent],
+            imports: [NgForTrackByPropertyModule]
+        });
+        fixture = TestBed.createComponent(TestIdComponent);
+        debugElement = fixture.debugElement;
+        element = debugElement.nativeElement;
+    });
+
+    afterEach(() => {
+        document.body.removeChild(element);
+    });
+
+    it('test', () => {
+        fixture.detectChanges();
+        expect(element.textContent).toBe('foobarbaz');
+    });
+});

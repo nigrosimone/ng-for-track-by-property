@@ -168,6 +168,44 @@ export class AppComponent {
 }
 ```
 
+since track by property `id` is a very common case, there is also `trackById`:
+
+```ts
+import { Component } from '@angular/core';
+
+interface Item { 
+  id: number; 
+  name: string;
+}
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <ul>
+      <li *ngFor="let item of list; trackById">
+        {{ item.id }} {{ item.name }}
+      </li>
+    </ul>
+  `,
+})
+export class AppComponent {
+  public list: Array<Item> = [
+    { id: 0, name: 'foo' },
+    { id: 1, name: 'bar' },
+    { id: 2, name: 'baz' },
+  ];
+}
+```
+
+# Available directives:
+
+| Directive             | Description              | HTML template sitax                                | TrackBy function             |
+| --------------------- | ------------------------ | -------------------------------------------------- | ---------------------------- |
+| trackByProperty: key  | Track by property `key`  | `*ngFor="let item of list; trackByProperty: 'id'"` | `(index, item) => item[key]` |
+| trackByIndex          | Track by `index`         | `*ngFor="let item of list; trackByIndex"`          | `(index, item) => index`     |
+| trackById             | Track by property `id`   | `*ngFor="let item of list; trackById"`             | `(index, item) => item.id`   |
+
+
 ## Support
 
 This is an open-source project. Star this [repository](https://github.com/nigrosimone/ng-for-track-by-property), if you like it, or even [donate](https://www.paypal.com/paypalme/snwp). Thank you so much! 
