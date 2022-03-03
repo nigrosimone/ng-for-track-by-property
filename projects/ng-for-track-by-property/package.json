@@ -1,6 +1,6 @@
 {
   "name": "ng-for-track-by-property",
-  "version": "13.0.6",
+  "version": "13.0.7",
   "description": "Angular global trackBy property directive with strict type checking.",
   "repository": {
     "type": "git",
