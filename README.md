@@ -197,13 +197,13 @@ export class AppComponent {
 }
 ```
 
-# Available directives:
+## Available directives
 
-| Directive             | Description              | HTML template sitax                                | TrackBy function             |
-| --------------------- | ------------------------ | -------------------------------------------------- | ---------------------------- |
-| trackByProperty: key  | Track by property `key`  | `*ngFor="let item of list; trackByProperty: 'id'"` | `(index, item) => item[key]` |
-| trackByIndex          | Track by `index`         | `*ngFor="let item of list; trackByIndex"`          | `(index, item) => index`     |
-| trackById             | Track by property `id`   | `*ngFor="let item of list; trackById"`             | `(index, item) => item.id`   |
+| Directive             | HTML template sitax                               | TrackBy function             |
+| --------------------- | ------------------------------------------------- | ---------------------------- |
+| trackByProperty: key  | `*ngFor="let item of arr; trackByProperty: 'id'"` | `(index, item) => item[key]` |
+| trackByIndex          | `*ngFor="let item of arr; trackByIndex"`          | `(index, item) => index`     |
+| trackById             | `*ngFor="let item of arr; trackById"`             | `(index, item) => item.id`   |
 
 
 ## Support
