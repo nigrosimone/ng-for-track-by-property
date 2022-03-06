@@ -1,27 +1,27 @@
+<button (click)="addElement()">Add element</button><button (click)="removeElement()">Remove element</button>
+<br>
+
 <h3>trackByProperty</h3>
 <ul>
   <li *ngFor="let item of list; trackByProperty: 'id'">
-    id: {{ item.id }}; count: {{ item.count }}
+    id: {{ item.id }}; name: {{ item.name }}
   </li>
 </ul>
 <h3>trackByIndex</h3>
 <ul>
   <li *ngFor="let item of list; trackByIndex">
-    id: {{ item.id }}; count: {{ item.count }}
+    id: {{ item.id }}; name: {{ item.name }}
   </li>
 </ul>
 <h3>trackById</h3>
 <ul>
   <li *ngFor="let item of list; trackById">
-    id: {{ item.id }}; count: {{ item.count }}
+    id: {{ item.id }}; name: {{ item.name }}
   </li>
 </ul>
 <h3>No trackBy</h3>
 <ul>
   <li *ngFor="let item of list">
-    id: {{ item.id }}; count: {{ item.count }}
+    id: {{ item.id }}; name: {{ item.name }}
   </li>
 </ul>
-
-
-<button (click)="randomChange()">Random change</button>

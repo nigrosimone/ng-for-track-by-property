@@ -8,9 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  list = Array(3).fill(undefined).map((_, i) => ({id: i, count: 0}));
+  list = Array(3).fill(undefined).map((_, i) => ({id: i, name: `foo_${i}`}));
 
-  randomChange() {
-    this.list[Math.floor(Math.random() * this.list.length)].count++;
+  addElement() {
+    this.list.push({id: this.list.length, name: `foo_${this.list.length}`});
+  }
+
+  removeElement(){
+    if(this.list.length > 0){
+      const random = Math.floor(Math.random() * this.list.length);
+      this.list.splice(random, 1);
+   }
   }
 }
