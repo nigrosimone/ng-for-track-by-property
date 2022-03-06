@@ -20,4 +20,9 @@ export class AppComponent {
       this.list.splice(random, 1);
    }
   }
+
+  randomChange() {
+    const random = Math.floor(Math.random() * this.list.length);
+    this.list[random].name = new Date().getTime().toString();
+  }
 }
