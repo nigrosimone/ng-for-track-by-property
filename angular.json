@@ -156,8 +156,9 @@
       }
     }
   },
-  "defaultProject": "ng-for-track-by-property",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
