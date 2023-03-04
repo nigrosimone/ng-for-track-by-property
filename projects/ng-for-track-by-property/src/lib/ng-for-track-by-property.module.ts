@@ -3,8 +3,6 @@ import { NgForTrackByIndexDirective, NgForTrackByPropertyDirective, NgForTrackBy
 
 @NgModule({
   declarations: [NgForTrackByPropertyDirective, NgForTrackByIndexDirective, NgForTrackByIdDirective],
-  imports: [],
   exports: [NgForTrackByPropertyDirective, NgForTrackByIndexDirective, NgForTrackByIdDirective],
-  providers: []
 })
 export class NgForTrackByPropertyModule { }

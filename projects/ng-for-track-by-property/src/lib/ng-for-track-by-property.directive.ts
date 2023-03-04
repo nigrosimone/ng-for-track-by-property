@@ -2,7 +2,6 @@ import { NgForOf } from '@angular/common';
 import { Directive, Host, Input, NgIterable } from '@angular/core';
 
 @Directive({
-    // tslint:disable-next-line: directive-selector
     selector: '[ngForTrackByProperty]'
 })
 export class NgForTrackByPropertyDirective<T> {
@@ -16,7 +15,6 @@ export class NgForTrackByPropertyDirective<T> {
 }
 
 @Directive({
-    // tslint:disable-next-line: directive-selector
     selector: '[ngForTrackByIndex]'
 })
 export class NgForTrackByIndexDirective<T> {
@@ -29,10 +27,9 @@ export class NgForTrackByIndexDirective<T> {
 }
 
 @Directive({
-    // tslint:disable-next-line: directive-selector
     selector: '[ngForTrackById]'
 })
-export class NgForTrackByIdDirective<T extends {id: number | string}> {
+export class NgForTrackByIdDirective<T extends { id: number | string }> {
 
     @Input() ngForOf!: NgIterable<T>;
 
