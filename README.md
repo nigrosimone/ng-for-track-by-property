@@ -199,7 +199,7 @@ export class AppComponent {
 
 ## Available directives
 
-| Directive             | HTML template sintax                              | TrackBy function             |
+| Directive             | HTML template syntax                              | TrackBy function             |
 | --------------------- | ------------------------------------------------- | ---------------------------- |
 | trackByProperty: key  | `*ngFor="let item of arr; trackByProperty: 'id'"` | `(index, item) => item[key]` |
 | trackByIndex          | `*ngFor="let item of arr; trackByIndex"`          | `(index, item) => index`     |
