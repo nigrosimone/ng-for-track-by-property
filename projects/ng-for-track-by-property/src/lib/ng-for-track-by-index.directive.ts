@@ -1,9 +1,8 @@
 /**
- * Sets the NgForOf#ngForTrackBy TrackByFunction to return the same item it recieves. This is only
- * to be used for primative types like numbers and strings.
+ * Sets the NgForOf#ngForTrackBy TrackByFunction to return the array index of the item it recieves.
  * Example use:
- *   `*ngFor="let title of books; let i = index; trackByIdentity"`
- * Note that `trackByIdentity` must be last.
+ *   `*ngFor="let title of books; let i = index; trackByIndex"`
+ * Note that `trackByIndex` must be last.
  */
 import { NgForOf } from '@angular/common'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { Directive, Host } from '@angular/core';
