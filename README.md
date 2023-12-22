@@ -9,8 +9,8 @@ When displaying a list of data (at least somewhat large lists) you should be usi
 ```ts
 import { Component } from '@angular/core';
 
-interface Item { 
-  id: number; 
+interface Item {
+  id: number;
   name: string;
 }
 
@@ -43,8 +43,8 @@ With `ng-for-track-by-property` you could just handle this entirely in the templ
 ```ts
 import { Component } from '@angular/core';
 
-interface Item { 
-  id: number; 
+interface Item {
+  id: number;
   name: string;
 }
 
@@ -115,8 +115,8 @@ export class AppModule { }
 ```ts
 import { Component } from '@angular/core';
 
-interface Item { 
-  id: number; 
+interface Item {
+  id: number;
   name: string;
 }
 
@@ -144,8 +144,8 @@ you can also track by index with `trackByIndex`, eg.:
 ```ts
 import { Component } from '@angular/core';
 
-interface Item { 
-  id: number; 
+interface Item {
+  id: number;
   name: string;
 }
 
@@ -173,8 +173,8 @@ since track by property `id` is a very common case, there is also `trackById`:
 ```ts
 import { Component } from '@angular/core';
 
-interface Item { 
-  id: number; 
+interface Item {
+  id: number;
   name: string;
 }
 
@@ -204,11 +204,11 @@ export class AppComponent {
 | trackByProperty: key  | `*ngFor="let item of arr; trackByProperty: 'id'"` | `(index, item) => item[key]` |
 | trackByIndex          | `*ngFor="let item of arr; trackByIndex"`          | `(index, item) => index`     |
 | trackById             | `*ngFor="let item of arr; trackById"`             | `(index, item) => item.id`   |
-
+| trackByIdentity       | `*ngFor="let item of arr; trackByIdentity"`       | `(index, item) => item`      |
 
 ## Support
 
-This is an open-source project. Star this [repository](https://github.com/nigrosimone/ng-for-track-by-property), if you like it, or even [donate](https://www.paypal.com/paypalme/snwp). Thank you so much! 
+This is an open-source project. Star this [repository](https://github.com/nigrosimone/ng-for-track-by-property), if you like it, or even [donate](https://www.paypal.com/paypalme/snwp). Thank you so much!
 
 ## My other libraries
 

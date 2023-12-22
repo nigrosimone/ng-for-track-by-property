@@ -13,7 +13,6 @@
     "sourceMap": true,
     "paths": {
       "ng-for-track-by-property": [
-        "dist/ng-for-track-by-property/ng-for-track-by-property",
         "dist/ng-for-track-by-property"
       ]
     },

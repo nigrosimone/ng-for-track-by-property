@@ -2,27 +2,36 @@
   "name": "ng-for-track-by-property",
   "version": "16.0.1",
   "description": "Angular global trackBy property directive with strict type checking.",
+  "keywords": [
+    "angular",
+    "ngFor",
+    "trackBy"
+  ],
+  "homepage": "https://github.com/nigrosimone/ng-for-track-by-property",
+  "bugs": {
+    "url": "https://github.com/nigrosimone/ng-for-track-by-property/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nigrosimone/ng-for-track-by-property.git"
   },
-  "keywords": [
-    "angular"
-  ],
-  "author": "Simone Nigro <nigro.simone@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nigrosimone/ng-for-track-by-property/issues"
-  },
-  "homepage": "https://github.com/nigrosimone/ng-for-track-by-property",
+  "author": "Simone Nigro <nigro.simone@gmail.com>",
+  "contributors": [
+    {
+      "name": "J Rob Gant",
+      "email": "rgant@alum.wpi.edu",
+      "url": "https://rob.gant.ninja/"
+    }
+  ],
   "scripts": {
+    "build": "ng build",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start-proxy": "ng serve"
+    "start-proxy": "ng serve",
+    "test": "ng test"
   },
   "dependencies": {
     "@angular/animations": "^16.0.0",
@@ -39,7 +48,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.0",
-    "@angular-devkit/build-ng-packagr": "^0.1002.0",
     "@angular-eslint/builder": "^16.0.1",
     "@angular-eslint/eslint-plugin": "^16.0.1",
     "@angular-eslint/eslint-plugin-template": "^16.0.1",
@@ -69,6 +77,6 @@
     "typescript": "^5.0.4"
   },
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=18.19.0"
   }
 }

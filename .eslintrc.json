@@ -17,8 +17,7 @@
         "project": [
           "projects/ng-for-track-by-property/tsconfig.lib.json",
           "projects/ng-for-track-by-property/tsconfig.spec.json",
-          "projects/ng-for-track-by-property-demo/tsconfig.app.json",
-          "projects/ng-for-track-by-property-demo/tsconfig.spec.json"
+          "projects/ng-for-track-by-property-demo/tsconfig.app.json"
         ],
         "createDefaultProgram": true
       },

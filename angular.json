@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/ng-for-track-by-property",
       "sourceRoot": "projects/ng-for-track-by-property/src",
-      "prefix": "ng",
+      "prefix": "ngForTrackBy",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -27,9 +27,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-for-track-by-property/src/test.ts",
             "tsConfig": "projects/ng-for-track-by-property/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-for-track-by-property/karma.conf.js"
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         },
         "lint": {
@@ -47,10 +49,33 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": true
         },
-        "@schematics/angular:application": {
-          "strict": true
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "projects/ng-for-track-by-property-demo",
@@ -63,15 +88,16 @@
             "outputPath": "dist/ng-for-track-by-property-demo",
             "index": "projects/ng-for-track-by-property-demo/src/index.html",
             "main": "projects/ng-for-track-by-property-demo/src/main.ts",
-            "polyfills": "projects/ng-for-track-by-property-demo/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/ng-for-track-by-property-demo/tsconfig.app.json",
-            "inlineStyleLanguage": "sass",
             "assets": [
               "projects/ng-for-track-by-property-demo/src/favicon.ico",
               "projects/ng-for-track-by-property-demo/src/assets"
             ],
             "styles": [
-              "projects/ng-for-track-by-property-demo/src/styles.sass"
+              "projects/ng-for-track-by-property-demo/src/styles.css"
             ],
             "scripts": []
           },
@@ -87,12 +113,6 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -123,25 +143,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-for-track-by-property-demochio:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ng-for-track-by-property-demo/src/test.ts",
-            "polyfills": "projects/ng-for-track-by-property-demo/src/polyfills.ts",
-            "tsConfig": "projects/ng-for-track-by-property-demo/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-for-track-by-property-demo/karma.conf.js",
-            "inlineStyleLanguage": "sass",
-            "assets": [
-              "projects/ng-for-track-by-property-demo/src/favicon.ico",
-              "projects/ng-for-track-by-property-demo/src/assets"
-            ],
-            "styles": [
-              "projects/ng-for-track-by-property-demo/src/styles.sass"
-            ],
-            "scripts": []
+            "browserTarget": "ng-for-track-by-property-demo:build"
           }
         },
         "lint": {
@@ -159,6 +161,7 @@
   "cli": {
     "schematicCollections": [
       "@angular-eslint/schematics"
-    ]
+    ],
+    "analytics": false
   }
 }
