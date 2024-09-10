@@ -31,7 +31,8 @@ export class NgForTrackByPropertyBaseDirective<T> {
  * ```
  */
 @Directive({
-    selector: '[ngForTrackByProperty]'
+    selector: '[ngForTrackByProperty]',
+    standalone: true
 })
 export class NgForTrackByPropertyDirective<T> extends NgForTrackByPropertyBaseDirective<T> {
 
@@ -81,7 +82,8 @@ export class NgForTrackByPropertyDirective<T> extends NgForTrackByPropertyBaseDi
  * ```
  */
 @Directive({
-    selector: '[ngForTrackByIndex]'
+    selector: '[ngForTrackByIndex]',
+    standalone: true
 })
 export class NgForTrackByIndexDirective<T> extends NgForTrackByPropertyBaseDirective<T> {
     constructor(@Host() ngForOfDir: NgForOf<T>) {
@@ -109,7 +111,8 @@ export class NgForTrackByIndexDirective<T> extends NgForTrackByPropertyBaseDirec
  * ```
  */
 @Directive({
-    selector: '[ngForTrackById]'
+    selector: '[ngForTrackById]',
+    standalone: true
 })
 export class NgForTrackByIdDirective<T extends { id: number | string }> extends NgForTrackByPropertyBaseDirective<T> {
     constructor(@Host() ngForOfDir: NgForOf<T>) {
