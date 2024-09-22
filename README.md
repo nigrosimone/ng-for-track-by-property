@@ -16,7 +16,6 @@ interface Item {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   template: `
     <ul>
       <li *ngFor="let item of list; trackBy: trackById">
@@ -43,7 +42,7 @@ With `ng-for-track-by-property` you could just handle this entirely in the templ
 
 ```ts
 import { Component } from '@angular/core';
-import { NgForTrackByPropertyModule } from 'ng-for-track-by-property';
+import { NgForTrackByPropertyDirective } from 'ng-for-track-by-property';
 
 interface Item { 
   id: number; 
@@ -52,8 +51,7 @@ interface Item {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [NgForTrackByPropertyModule],
+  imports: [NgForTrackByPropertyDirective],
   template: `
     <ul>
       <li *ngFor="let item of list; trackByProperty: 'id'">
@@ -95,7 +93,7 @@ npm i ng-for-track-by-property
 
 ```ts
 import { Component } from '@angular/core';
-import { NgForTrackByPropertyModule } from 'ng-for-track-by-property';
+import { NgForTrackByPropertyDirective } from 'ng-for-track-by-property';
 
 interface Item { 
   id: number; 
@@ -104,8 +102,7 @@ interface Item {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [NgForTrackByPropertyModule],
+  imports: [NgForTrackByPropertyDirective],
   template: `
     <ul>
       <li *ngFor="let item of list; trackByProperty: 'id'">
@@ -127,7 +124,7 @@ you can also track by index with `trackByIndex`, eg.:
 
 ```ts
 import { Component } from '@angular/core';
-import { NgForTrackByPropertyModule } from 'ng-for-track-by-property';
+import { NgForTrackByIndexDirective } from 'ng-for-track-by-property';
 
 interface Item { 
   id: number; 
@@ -136,8 +133,7 @@ interface Item {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [NgForTrackByPropertyModule],
+  imports: [NgForTrackByIndexDirective],
   template: `
     <ul>
       <li *ngFor="let item of list; trackByIndex">
@@ -159,7 +155,7 @@ since track by property `id` is a very common case, there is also `trackById`:
 
 ```ts
 import { Component } from '@angular/core';
-import { NgForTrackByPropertyModule } from 'ng-for-track-by-property';
+import { NgForTrackByIdDirective } from 'ng-for-track-by-property';
 
 interface Item { 
   id: number; 
@@ -168,8 +164,7 @@ interface Item {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [NgForTrackByPropertyModule],
+  imports: [NgForTrackByIdDirective],
   template: `
     <ul>
       <li *ngFor="let item of list; trackById">
