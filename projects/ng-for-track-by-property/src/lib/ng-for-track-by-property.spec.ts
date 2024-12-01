@@ -7,7 +7,9 @@ import { NgForTrackByIdDirective, NgForTrackByIndexDirective, NgForTrackByProper
 describe('NgForTrackByProperty', () => {
 
     it('ngModule trackByProperty', () => {
-        @Component({ template: `<ul><li *ngFor="let item of list; trackByProperty: 'id'">{{ item.name }}</li></ul>`, standalone: true, imports: [CommonModule, NgForTrackByPropertyModule] })
+        @Component({
+            template: `<ul><li *ngFor="let item of list; trackByProperty: 'id'">{{ item.name }}</li></ul>`, imports: [CommonModule, NgForTrackByPropertyModule]
+        })
         class TestComponent {
             list = [
                 { id: 0, name: 'foo' },
@@ -21,7 +23,9 @@ describe('NgForTrackByProperty', () => {
     });
 
     it('ngModule trackByIndex', () => {
-        @Component({ template: `<ul><li *ngFor="let item of list; trackByIndex">{{ item.name }}</li></ul>`, standalone: true, imports: [CommonModule, NgForTrackByPropertyModule] })
+        @Component({
+            template: `<ul><li *ngFor="let item of list; trackByIndex">{{ item.name }}</li></ul>`, imports: [CommonModule, NgForTrackByPropertyModule]
+        })
         class TestComponent {
             list = [
                 { id: 0, name: 'foo' },
@@ -35,7 +39,9 @@ describe('NgForTrackByProperty', () => {
     });
 
     it('ngModule trackById', () => {
-        @Component({ template: `<ul><li *ngFor="let item of list; trackById">{{ item.name }}</li></ul>`, standalone: true, imports: [CommonModule, NgForTrackByPropertyModule] })
+        @Component({
+            template: `<ul><li *ngFor="let item of list; trackById">{{ item.name }}</li></ul>`, imports: [CommonModule, NgForTrackByPropertyModule]
+        })
         class TestComponent {
             list = [
                 { id: 0, name: 'foo' },
@@ -49,7 +55,9 @@ describe('NgForTrackByProperty', () => {
     });
 
     it('standalone trackByProperty', () => {
-        @Component({ template: `<ul><li *ngFor="let item of list; trackByProperty: 'id'">{{ item.name }}</li></ul>`, standalone: true, imports: [CommonModule, NgForTrackByPropertyDirective] })
+        @Component({
+            template: `<ul><li *ngFor="let item of list; trackByProperty: 'id'">{{ item.name }}</li></ul>`, imports: [CommonModule, NgForTrackByPropertyDirective]
+        })
         class TestComponent {
             list = [
                 { id: 0, name: 'foo' },
@@ -63,7 +71,9 @@ describe('NgForTrackByProperty', () => {
     });
 
     it('standalone trackByIndex', () => {
-        @Component({ template: `<ul><li *ngFor="let item of list; trackByIndex">{{ item.name }}</li></ul>`, standalone: true, imports: [CommonModule, NgForTrackByIndexDirective] })
+        @Component({
+            template: `<ul><li *ngFor="let item of list; trackByIndex">{{ item.name }}</li></ul>`, imports: [CommonModule, NgForTrackByIndexDirective]
+        })
         class TestComponent {
             list = [
                 { id: 0, name: 'foo' },
@@ -77,7 +87,9 @@ describe('NgForTrackByProperty', () => {
     });
 
     it('standalone trackById', () => {
-        @Component({ template: `<ul><li *ngFor="let item of list; trackById">{{ item.name }}</li></ul>`, standalone: true, imports: [CommonModule, NgForTrackByIdDirective] })
+        @Component({
+            template: `<ul><li *ngFor="let item of list; trackById">{{ item.name }}</li></ul>`, imports: [CommonModule, NgForTrackByIdDirective]
+        })
         class TestComponent {
             list = [
                 { id: 0, name: 'foo' },
