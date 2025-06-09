@@ -6,6 +6,7 @@ export class NgForTrackByPropertyBaseDirective<T> {
 
     @Input() ngForOf!: NgIterable<T>;
 
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     constructor(ngForOfDir: NgForOf<T>, fn: TrackByFunction<T>) {
         ngForOfDir.ngForTrackBy = fn;
     }
@@ -57,6 +58,7 @@ export class NgForTrackByPropertyDirective<T> extends NgForTrackByPropertyBaseDi
      */
     @Input() ngForTrackByProperty!: keyof T;
 
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     constructor(@Host() ngForOfDir: NgForOf<T>) {
         super(ngForOfDir, (_, item: T): T[keyof T] => item[this.ngForTrackByProperty])
     }
@@ -86,6 +88,7 @@ export class NgForTrackByPropertyDirective<T> extends NgForTrackByPropertyBaseDi
     standalone: true
 })
 export class NgForTrackByIndexDirective<T> extends NgForTrackByPropertyBaseDirective<T> {
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     constructor(@Host() ngForOfDir: NgForOf<T>) {
         super(ngForOfDir, (index: number): number => index)
     }
@@ -115,6 +118,7 @@ export class NgForTrackByIndexDirective<T> extends NgForTrackByPropertyBaseDirec
     standalone: true
 })
 export class NgForTrackByIdDirective<T extends { id: number | string }> extends NgForTrackByPropertyBaseDirective<T> {
+    // eslint-disable-next-line @angular-eslint/prefer-inject
     constructor(@Host() ngForOfDir: NgForOf<T>) {
         super(ngForOfDir, (_, item: T) => item.id)
     }
