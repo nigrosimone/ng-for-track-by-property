@@ -1,13 +1,19 @@
 {
   "name": "ng-for-track-by-property",
-  "version": "21.0.1",
+  "version": "22.0.0",
   "description": "Angular global trackBy property directive with strict type checking.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nigrosimone/ng-for-track-by-property.git"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "directive",
+    "ngfor",
+    "trackby",
+    "performance",
+    "rendering",
+    "typescript"
   ],
   "author": "Simone Nigro <nigro.simone@gmail.com>",
   "license": "MIT",
@@ -16,8 +22,8 @@
   },
   "homepage": "https://github.com/nigrosimone/ng-for-track-by-property",
   "peerDependencies": {
-    "@angular/common": ">15.0.0",
-    "@angular/core": ">15.0.0"
+    "@angular/common": ">=16.0.0",
+    "@angular/core": ">=16.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

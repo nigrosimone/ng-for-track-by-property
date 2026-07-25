@@ -17,7 +17,7 @@ After building your library with `ng build ng-for-track-by-property`, go to the 
 
 ## Running unit tests
 
-Run `ng test ng-for-track-by-property` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test ng-for-track-by-property` to execute the unit tests via [Vitest](https://vitest.dev).
 
 ## Further help
 

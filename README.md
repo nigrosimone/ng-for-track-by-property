@@ -1,6 +1,9 @@
-# NgForTrackByProperty [![Build Status](https://app.travis-ci.com/nigrosimone/ng-for-track-by-property.svg?branch=main)](https://app.travis-ci.com/nigrosimone/ng-for-track-by-property) [![Coverage Status](https://coveralls.io/repos/github/nigrosimone/ng-for-track-by-property/badge.svg?branch=main)](https://coveralls.io/github/nigrosimone/ng-for-track-by-property?branch=main) [![NPM version](https://img.shields.io/npm/v/ng-for-track-by-property.svg)](https://www.npmjs.com/package/ng-for-track-by-property)
+# NgForTrackByProperty [![Build Status](https://github.com/nigrosimone/ng-for-track-by-property/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/nigrosimone/ng-for-track-by-property/actions/workflows/node.js.yml) [![NPM version](https://img.shields.io/npm/v/ng-for-track-by-property.svg)](https://www.npmjs.com/package/ng-for-track-by-property)
 
 Angular global trackBy property directive with strict type checking.
+
+> This library is for templates written with `*ngFor`. Angular's built-in `@for` block has its own
+> mandatory `track` expression, so code already migrated to the control flow syntax does not need it.
 
 ## Description
 
@@ -73,7 +76,7 @@ export class AppListComponent {
 
 ![alt text](https://github.com/nigrosimone/ng-for-track-by-property/blob/main/help.gif?raw=true)
 
-See the [stackblitz demo](https://stackblitz.com/edit/demo-ng-for-track-by-property?file=src%2Fapp%2Fapp.component.ts).
+See the [stackblitz demo](https://stackblitz.com/github/nigrosimone/ng-for-track-by-property/tree/main/examples/stackblitz), or its [sources](examples/stackblitz).
 
 ## Features
 

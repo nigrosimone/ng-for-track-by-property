@@ -3,13 +3,12 @@ import { Directive, Host, Input, NgIterable, TrackByFunction } from '@angular/co
 
 @Directive()
 export class NgForTrackByPropertyBaseDirective<T> {
+  @Input() ngForOf!: NgIterable<T>;
 
-    @Input() ngForOf!: NgIterable<T>;
-
-    // eslint-disable-next-line @angular-eslint/prefer-inject
-    constructor(ngForOfDir: NgForOf<T>, fn: TrackByFunction<T>) {
-        ngForOfDir.ngForTrackBy = fn;
-    }
+  // eslint-disable-next-line @angular-eslint/prefer-inject
+  constructor(ngForOfDir: NgForOf<T>, fn: TrackByFunction<T>) {
+    ngForOfDir.ngForTrackBy = fn;
+  }
 }
 
 /**
@@ -32,36 +31,35 @@ export class NgForTrackByPropertyBaseDirective<T> {
  * ```
  */
 @Directive({
-    selector: '[ngForTrackByProperty]',
-    standalone: true
+  selector: '[ngForTrackByProperty]',
+  standalone: true,
 })
 export class NgForTrackByPropertyDirective<T> extends NgForTrackByPropertyBaseDirective<T> {
+  /**
+   * @ngModule NgForTrackByPropertyModule
+   *
+   * @description
+   *
+   * The `[ngForTrackByProperty]` directive provide an Angular trackBy.
+   *
+   * @usageNotes
+   *
+   * ### Usage
+   *
+   * ```html
+   * <ul>
+   *   <li *ngFor="let item of list; trackByProperty: 'id'">
+   *     id: {{ item.id }}; name: {{ item.name }}
+   *   </li>
+   * </ul>
+   * ```
+   */
+  @Input() ngForTrackByProperty!: keyof T;
 
-    /**
-     * @ngModule NgForTrackByPropertyModule
-     *
-     * @description
-     *
-     * The `[ngForTrackByProperty]` directive provide an Angular trackBy.
-     *
-     * @usageNotes
-     *
-     * ### Usage
-     *
-     * ```html
-     * <ul>
-     *   <li *ngFor="let item of list; trackByProperty: 'id'">
-     *     id: {{ item.id }}; name: {{ item.name }}
-     *   </li>
-     * </ul>
-     * ```
-     */
-    @Input() ngForTrackByProperty!: keyof T;
-
-    // eslint-disable-next-line @angular-eslint/prefer-inject
-    constructor(@Host() ngForOfDir: NgForOf<T>) {
-        super(ngForOfDir, (_, item: T): T[keyof T] => item[this.ngForTrackByProperty])
-    }
+  // eslint-disable-next-line @angular-eslint/prefer-inject
+  constructor(@Host() ngForOfDir: NgForOf<T>) {
+    super(ngForOfDir, (_, item: T): T[keyof T] => item[this.ngForTrackByProperty]);
+  }
 }
 
 /**
@@ -84,14 +82,14 @@ export class NgForTrackByPropertyDirective<T> extends NgForTrackByPropertyBaseDi
  * ```
  */
 @Directive({
-    selector: '[ngForTrackByIndex]',
-    standalone: true
+  selector: '[ngForTrackByIndex]',
+  standalone: true,
 })
 export class NgForTrackByIndexDirective<T> extends NgForTrackByPropertyBaseDirective<T> {
-    // eslint-disable-next-line @angular-eslint/prefer-inject
-    constructor(@Host() ngForOfDir: NgForOf<T>) {
-        super(ngForOfDir, (index: number): number => index)
-    }
+  // eslint-disable-next-line @angular-eslint/prefer-inject
+  constructor(@Host() ngForOfDir: NgForOf<T>) {
+    super(ngForOfDir, (index: number): number => index);
+  }
 }
 
 /**
@@ -114,12 +112,14 @@ export class NgForTrackByIndexDirective<T> extends NgForTrackByPropertyBaseDirec
  * ```
  */
 @Directive({
-    selector: '[ngForTrackById]',
-    standalone: true
+  selector: '[ngForTrackById]',
+  standalone: true,
 })
-export class NgForTrackByIdDirective<T extends { id: number | string }> extends NgForTrackByPropertyBaseDirective<T> {
-    // eslint-disable-next-line @angular-eslint/prefer-inject
-    constructor(@Host() ngForOfDir: NgForOf<T>) {
-        super(ngForOfDir, (_, item: T) => item.id)
-    }
+export class NgForTrackByIdDirective<
+  T extends { id: number | string },
+> extends NgForTrackByPropertyBaseDirective<T> {
+  // eslint-disable-next-line @angular-eslint/prefer-inject
+  constructor(@Host() ngForOfDir: NgForOf<T>) {
+    super(ngForOfDir, (_, item: T) => item.id);
+  }
 }

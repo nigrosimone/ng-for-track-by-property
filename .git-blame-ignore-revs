@@ -1,0 +1,7 @@
+# Revisions to skip in `git blame` because they only reformat code.
+#
+# Enable locally with:
+#   git config blame.ignoreRevsFile .git-blame-ignore-revs
+
+# chore: modernise the ESLint flat config and add Prettier
+d43cac51c28109f7235f0f53004aab72cb16aceb
