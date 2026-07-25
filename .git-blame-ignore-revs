@@ -2,5 +2,6 @@
 #
 # Enable locally with:
 #   git config blame.ignoreRevsFile .git-blame-ignore-revs
-#
-# Add the full SHA of the Prettier sweep commit below once it is committed.
+
+# chore: modernise the ESLint flat config and add Prettier
+d43cac51c28109f7235f0f53004aab72cb16aceb
