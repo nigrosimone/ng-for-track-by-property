@@ -29,6 +29,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  # the release commits on the runner: git hooks have no business running there
+  HUSKY: 0
   LIB: ng-for-track-by-property
   LIB_DIR: projects/ng-for-track-by-property
   DIST_DIR: dist/ng-for-track-by-property
